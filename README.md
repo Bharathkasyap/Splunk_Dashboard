@@ -42,15 +42,10 @@ Create a Splunk Dashboard with the following:
 
 ### Expected Deliverables:
 
-✅ Complete and working Splunk dashboard
-
-✅ Complete project documentation (README.md)
-
-✅ GitHub repository link for portfolio reference
-
-✅ Screenshots of dashboards with sample data
-
-
+- ✅ Complete and working Splunk dashboard
+- ✅ Complete project documentation (README.md)
+- ✅ GitHub repository link for portfolio reference
+- ✅ Screenshots of dashboards with sample data
 
 ---
 
