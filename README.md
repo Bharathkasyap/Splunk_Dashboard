@@ -2,12 +2,62 @@
 # 📊 Splunk Access Logs Dashboard Project
 
 ### Overview
-This GitHub project showcases how to deploy **Splunk Enterprise** in both **Linux** and **Windows (via Docker)** environments and how to create an **Access Logs Dashboard** using sample SSH activity logs.
+Task Assignment – Splunk Access Logs Dashboard Project
+Assigned By (Manager):
+Name: Venkata Bharath Devulapalli
+Role: Cybersecurity Analyst
+Objective: Document Splunk installation process and create a professional dashboard visualizing access logs data.
 
-### Goals of This Project
-- ✅ Splunk installation on multiple operating systems.
-- ✅ Log ingestion and parsing using SPL queries.
-- ✅ Designing professional dashboards in Splunk.
+Task Assigned To (Employee):
+Name: [Employee Name]
+Role: Junior Cybersecurity Analyst
+
+Project Scope:
+You are assigned to document and complete the following:
+
+Splunk Installation
+
+Document step-by-step installation of Splunk Enterprise on Linux (manual method).
+
+Document step-by-step installation of Splunk on Windows using Docker.
+
+Log File Preparation
+
+Ingest provided secure.log sample data simulating SSH login attempts (both success and failure).
+
+Dashboard Development
+
+Create a Splunk Dashboard with the following:
+
+Pie Chart for Top Invalid Users.
+
+Bar Chart for Top Source IP Addresses.
+
+Time Range Picker to filter data by time.
+
+Dynamic Dropdown Filters (e.g., protocol selection).
+
+Data Table displaying fields like src_ip, user, src_port, and protocol.
+
+Documentation
+
+Prepare a README.md file with:
+
+Installation guides.
+
+Dashboard details and screenshots.
+
+Sample SPL queries used in each panel.
+
+Organize project folder in GitHub with clear sections for easy reviewer understanding.
+
+Expected Deliverables:
+✅ Complete and working Splunk dashboard
+✅ Complete project documentation (README.md)
+✅ GitHub repository link for portfolio reference
+✅ Screenshots of dashboards with sample data
+
+
 
 ---
 
