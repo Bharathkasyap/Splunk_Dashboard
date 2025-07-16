@@ -142,7 +142,9 @@ docker run -d -p 8000:8000 -p 8088:8088 -p 9997:9997 \
 - We first create Custom Dashboard layout called 'Access Log Dashboard' using Classic Dashboards (you can also use Dashboard Studio)
 
 <div align="center">
-<img src =src/DashboardCreate.png width="500"> `   `  <img src =src/DashboardCreate2.png width="300">
+<img src =src/DashboardCreate.png width="500"> 
+ 
+ <img src =src/DashboardCreate2.png width="300">
 </div>
  </br>
 
