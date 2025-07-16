@@ -1,60 +1,62 @@
-
 # 📊 Splunk Access Logs Dashboard Project
 
 ### Overview
 Task Assignment – Splunk Access Logs Dashboard Project
-Assigned By (Manager):
-Name: Venkata Bharath Devulapalli
+- Assigned By (Manager):
+- Role: Cybersecurity Analyst
+- Objective: Document Splunk installation process and create a professional dashboard visualizing access logs data.
+
+### Task Assigned To (Employee):
+
 Role: Cybersecurity Analyst
-Objective: Document Splunk installation process and create a professional dashboard visualizing access logs data.
 
-Task Assigned To (Employee):
-Name: [Employee Name]
-Role: Junior Cybersecurity Analyst
-
-Project Scope:
+### Project Scope:
 You are assigned to document and complete the following:
 
-Splunk Installation
+- Splunk Installation
 
-Document step-by-step installation of Splunk Enterprise on Linux (manual method).
+- Document step-by-step installation of Splunk Enterprise on Linux (manual method).
 
-Document step-by-step installation of Splunk on Windows using Docker.
+- Document step-by-step installation of Splunk on Windows using Docker.
 
-Log File Preparation
+- Log File Preparation
 
-Ingest provided secure.log sample data simulating SSH login attempts (both success and failure).
+- Ingest provided secure.log sample data simulating SSH login attempts (both success and failure).
 
-Dashboard Development
+- Dashboard Development
 
-Create a Splunk Dashboard with the following:
+### Create a Splunk Dashboard with the following:
 
-Pie Chart for Top Invalid Users.
+- Pie Chart for Top Invalid Users.
 
-Bar Chart for Top Source IP Addresses.
+- Bar Chart for Top Source IP Addresses.
 
-Time Range Picker to filter data by time.
+- Time Range Picker to filter data by time.
 
-Dynamic Dropdown Filters (e.g., protocol selection).
+- Dynamic Dropdown Filters (e.g., protocol selection).
 
-Data Table displaying fields like src_ip, user, src_port, and protocol.
+- Data Table displaying fields like src_ip, user, src_port, and protocol.
 
-Documentation
+- Documentation
 
-Prepare a README.md file with:
+This README.md file contains:
 
-Installation guides.
+- Installation guides.
 
-Dashboard details and screenshots.
+- Dashboard details and screenshots.
 
-Sample SPL queries used in each panel.
+- Sample SPL queries used in each panel.
 
-Organize project folder in GitHub with clear sections for easy reviewer understanding.
+- Organize project folder in GitHub with clear sections for easy reviewer understanding.
 
-Expected Deliverables:
+### Expected Deliverables:
+
 ✅ Complete and working Splunk dashboard
+
 ✅ Complete project documentation (README.md)
+
 ✅ GitHub repository link for portfolio reference
+
 ✅ Screenshots of dashboards with sample data
 
 
