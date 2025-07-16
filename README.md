@@ -154,16 +154,14 @@ docker run -d -p 8000:8000 -p 8088:8088 -p 9997:9997 \
 </div>
  </br>
 
- - Then We can see the Empty Dashboard without any panels, we then create the dashboardas per the request
+ - Here, We see the Empty Dashboard without any panels, we then create the dashboardas per the request
    
   <div align="center">
 <img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/Empty%20Dashboard.png> 
 </div>
  </br>
 
-- For the dashboard, we can approach using either UI or using source.
-- Instead of adding the query from the dashboard, we first create our SPL and create appropiate vizualization from the query and we add to this existing dashboard layout
-- I am using the below query for the Top CategoryId using SPL query
+- Query used for the Top CategoryId:
   
 ```SPL
 sourcetype=access_combined_wcookie | top categoryId
@@ -178,7 +176,7 @@ sourcetype=access_combined_wcookie | top categoryId
  </div>
  </br>
  
-- Then, we check for the right visualzation and add the panel to the existing dashboard, in our case Dashboard name is "Access Log Dashboard"
+- We then choose a suitable visualization, such as a Bar Chart, and add this second panel to the 'Access Log Dashboard'.
   
 <div align="center">
 <img src =src/top.png> 
@@ -195,26 +193,8 @@ sourcetype=access_combined_wcookie | stats count by clientip
  </div>
  </br>
  
-- We then choose a suitable visualization, such as a Bar Chart, and add this second panel to the 'Access Log Dashboard'.
 
 - Initially, the dashboard layout might appear unorganized.
-
-- We can easily adjust the arrangement of panels by dragging and dropping them into desired positions within the Edit mode, ensuring a more coherent presentation.
-
-- Now, we proceed to add interactive input elements, starting with a Time Range Picker.
-- Select 'Time' from the Add Inputs menu.
-
-- Configure the Time Range settings as required for data filtering.
-
-- To ensure that panels update dynamically with the selected time range, synchronize the input. This is achieved by editing the search for each panel and linking it to the newly configured time input.
-
-- Following the time range input, we integrate a Submit Button from the Add Inputs menu. This button allows users to confirm input selections before applying them to the dashboard.
-
-- The dashboard, with the added time picker and submit button, now appears as follows:
-
-- Next, we return to the search interface to create a panel for SSH login attempts, using a query to count occurrences by source and user:
-
-
 
 
 <div align="center">
@@ -222,7 +202,7 @@ sourcetype=access_combined_wcookie | stats count by clientip
  </div>
  </br>
 
-- Lets go to the dashboard and check for any adjustments needed for the dashboard, if not we can continue with the next search
+- We can easily adjust the arrangement of panels by dragging and dropping them into desired positions within the Edit mode, ensuring a more coherent presentation.
 
 <div align="center">
 <img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/Layout%20disorder.png> 
@@ -236,48 +216,52 @@ sourcetype=access_combined_wcookie | stats count by clientip
  </div>
  </br>
 
-- Now, lets work on Adding input like time range and submit button
-- Choose Time from Add Inputs
+- Now, we proceed to add interactive input elements, starting with a Time Range Picker.
+
+- Select 'Time' from the Add Inputs menu.
   
 <div align="center">
 <img src =src/TimePicker.png> 
  </div>
  </br>
-- Edit the Time Range settings as needed
+ 
+- Configure the Time Range settings as required for data filtering.
 
 <div align="center">
 <img src =src/TimelineSettings.png> 
  </div>
  </br>
 
-- After refining the time range settings, we need to synchronize this input with the panels. So they can update when we change the Time Range
-- For this Go to Edit Search for each panel and update the Tiem Range from there.
+- To ensure that panels update dynamically with the selected time range, synchronize the input. This is achieved by editing the search for each panel and linking it to the newly configured time input.
 
 <div align="center">
 <img src =src/EditSearch.png> 
  </div>
  </br>
- 
+
+ - Following the time range input, we integrate a Submit Button from the Add Inputs menu. This button allows users to confirm input selections before applying them to the dashboard.
+   
 <div align="center">
 <img src =src/SynchronizeTimeline.png> 
  </div>
  </br>
 
 - Next, we will choose the submit buttom from Add inputs, this feature helps to confirm the inputs added before
-- 
+  
  <div align="center">
 <img src =src/SubmitButton.png> 
  </div>
  </br>
 
-- Now, The output looks like this:
 
+- The dashboard, with the added time picker and submit button, now appears as follows:
+  
  <div align="center">
 <img src =src/Partial.png> 
  </div>
  </br>
 
-- Then, we go back to Search, to continue with our next panel for the dashboard using the query:
+- Next, we return to the search interface to create a panel for SSH login attempts, using a query to count occurrences by source and user:
 
 ```spl
 sourcetype=linux_secure | stats count by src, user
@@ -290,31 +274,21 @@ sourcetype=linux_secure | stats count by src, user
 
 - This finalized panel is then added to the existing dashboard.
 
-- For enhanced interactivity, a Text Input can be added, allowing users to dynamically filter secure logs within the table.
-
-- Configure the text input settings and copy the associated token to link it with the table's search string.
-
-- Embed the token within the table's search string to enable dynamic filtering based on user input.
-
-- To assist users unfamiliar with exact field names, a Dropdown Input can be implemented. This provides a predefined set of static options for selection.
-
-- Similar to the text input, synchronize the dropdown's token with the relevant search string to enable dynamic filtering based on dropdown selections.
-
-- The completed dashboard showcases a professional and practical real-world application of Splunk's dashboarding capabilities, serving as a valuable reference.
-  
- <div align="center">
+<div align="center">
 <img src =src/AfterSecureadd.png> 
- </div>
- </br>
+</div>
+</br>
 
-- For the new panel, if the user wants to add any dynamic Secure logs to the table, can be used with the text input
+- For enhanced interactivity, a Text Input can be added, allowing users to dynamically filter secure logs within the table.
   
   <div align="center">
 <img src =src/AddText.png> 
  </div>
  </br>
 
-- Edit the Add text settings and copy the token using here to synchronize with the table search string
+- Configure the text input settings and copy the associated token to link it with the table's search string.
+  
+- Embed the token within the table's search string to enable dynamic filtering based on user input.
   
   <div align="center">
 <img src =src/EditAddText.png> 
@@ -333,8 +307,7 @@ sourcetype=linux_secure | stats count by src, user
  </div>
  </br>
 
-- Now, lets say the user is unawre of exact field names what they are looking for, so in order to avoid this issue, we can use the drop down
-- Here, we provide the static options as the inbuilt options to choose from the drop down
+- To assist users unfamiliar with exact field names, a Dropdown Input can be implemented. This provides a predefined set of static options for selection.
   
 <div align="center">
 <img src =src/DropDown.png> 
@@ -346,14 +319,14 @@ sourcetype=linux_secure | stats count by src, user
  </div>
  </br>
 
-- Like we did before, we need to synchronize the settings using the token asscoicate with the search String
-  
+- Similar to the text input, synchronize the dropdown's token with the relevant search string to enable dynamic filtering based on dropdown selections.
+
  <div align="center">
 <img src =src/DropDownSync.png> 
  </div>
  </br>
 
-- The final output looks like the professional realworld use case, we can build similar dashboards using this as the reference
+- The completed dashboard showcases a professional and practical real-world application of Splunk's dashboarding capabilities, serving as a valuable reference.
   
  <div align="center">
 <img src =src/FinalOutput.png> 
