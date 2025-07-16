@@ -145,6 +145,12 @@ docker run -d -p 8000:8000 -p 8088:8088 -p 9997:9997 \
 <img src =src/DashboardCreate.png width="500"> <img src =src/DashboardCreate2.png width="300">
 </div>
  </br>
+
+ - Then We can see the Empty Dashboard without any panels, we then create the dashboardas per the request
+  <div align="center">
+<img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/Empty%20Dashboard.png width="500"> 
+</div>
+ </br>
  
 - 🟣 **Pie Chart** → Top Invalid Users.
   - _Example Screenshot:_  
