@@ -129,15 +129,23 @@ docker run -d -p 8000:8000 -p 8088:8088 -p 9997:9997 \
 ### 📊 Dashboard Description
 
 #### 📂 Dataset Used
-- `secure.log` file containing simulated SSH login attempts (both failed and successful).
+- We are using two log files in this project `access.log` and `secure.log` file containing simulated access logs and SSH login attempts (both failed and successful).
 
 #### 🎯 Dashboard Goals
+- This Dashboard contains multiple panels and use searches (Splunk SPL Searches) to generate Vizualizations.
 - Analyze failed and successful SSH login attempts.
 - Track top usernames involved in failed logins.
 - Identify top source IPs.
 - Monitor trends over time using time range selectors.
 
 #### 📊 Dashboard Visualizations
+- We first create Custom Dashboard layout called 'Access Log Dashboard' using Classic Dashboards (you can also use Dashboard Studio)
+
+<div align="center">
+<img src =src/DashboardCreate.png width="300"> <img src =src/DashboardCreate2.png width="300">
+</div>
+ </br>
+ 
 - 🟣 **Pie Chart** → Top Invalid Users.
   - _Example Screenshot:_  
   `![Pie Chart](Dashboard_Screenshots/pie_chart_top_invalid_users.png)`
