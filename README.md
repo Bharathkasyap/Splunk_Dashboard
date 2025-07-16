@@ -59,6 +59,7 @@ Create a Splunk Dashboard with the following:
 ├── access_log_dashboard.pdf
 ├── Sample_Search_Queries.md
 └── secure.log
+└── access.log
 ```
 
 ---
