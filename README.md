@@ -153,32 +153,169 @@ docker run -d -p 8000:8000 -p 8088:8088 -p 9997:9997 \
 <img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/Empty%20Dashboard.png> 
 </div>
  </br>
- 
-- 🟣 **Pie Chart** → Top Invalid Users.
-  - _Example Screenshot:_  
-  `![Pie Chart](Dashboard_Screenshots/pie_chart_top_invalid_users.png)`
-- 🟣 **Bar Chart** → Top Source IPs.
-  - _Example Screenshot:_  
-  `![Bar Chart](Dashboard_Screenshots/bar_chart_source_ip_count.png)`
-- 🟣 **Table** → Detailed view of login events.
-  - _Example Screenshot:_  
-  `![Table](Dashboard_Screenshots/table_linux_secure_logs.png)`
-- 🟣 **Dropdown Input** → Dynamic filters for user or status.
-- 🟣 **Time Range Picker** → Flexible timeline selection.
 
-#### 💻 Sample Queries Used
-##### Failed logins by user
-```spl
-source="secure.log" | rex "Failed password for (invalid user )?(?<user>\S+)" | stats count by user
+- For the dashboard, we can approach using either UI or using source.
+- Instead of adding the query from the dashboard, we first create our SPL and create appropiate vizualization from the query and we add to this existing dashboard layout
+- I am using the below query for the Top CategoryId using SPL query
+  
+```SPL
+sourcetype=access_combined_wcookie | top categoryId
 ```
-##### Successful logins by user
-```spl
-source="secure.log" | search "Accepted password" | rex "Accepted password for (?<user>\S+)" | stats count by user
+<div align="center">
+<img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/top%20Search.png> 
+ </div>
+ </br>
+ 
+- Then, we check for the right visualzation and add the panel to the existing dashboard, in our case Dashboard name is "Access Log Dashboard"
+  
+<div align="center">
+<img src =src/top.png> 
+ </div>
+ </br>
+
+- Now lets go for the second search "clientIP", the query is
+
+```SPL
+sourcetype=access_combined_wcookie | stats count by clientip
 ```
-##### Top source IP addresses
+<div align="center">
+<img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/clientip%20search.png> 
+ </div>
+ </br>
+ 
+- Then, we check for the right visualzation and add the second panel to the same existing dashboard "Access Log Dashboard"
+
+<div align="center">
+<img src =src/clientip.png> 
+ </div>
+ </br>
+
+- Lets go to the dashboard and check for any adjustments needed for the dashboard, if not we can continue with the next search
+
+<div align="center">
+<img src =https://github.com/Bharathkasyap/Splunk_Dashboard/blob/main/src/Layout%20disorder.png> 
+ </div>
+ </br>
+
+ - The dashboard looks unorganized to continue further, so we first make the adjustments. Using Edit, we can drag the panels the way we want
+
+<div align="center">
+<img src =src/EditedinOrder.png> 
+ </div>
+ </br>
+
+- Now, lets work on Adding input like time range and submit button
+- Choose Time from Add Inputs
+  
+<div align="center">
+<img src =src/TimePicker.png> 
+ </div>
+ </br>
+- Edit the Time Range settings as needed
+
+<div align="center">
+<img src =src/TimelineSettings.png> 
+ </div>
+ </br>
+
+- After refining the time range settings, we need to synchronize this input with the panels. So they can update when we change the Time Range
+- For this Go to Edit Search for each panel and update the Tiem Range from there.
+
+<div align="center">
+<img src =src/EditSearch.png> 
+ </div>
+ </br>
+ 
+<div align="center">
+<img src =src/SynchronizeTimeline.png> 
+ </div>
+ </br>
+
+- Next, we will choose the submit buttom from Add inputs, this feature helps to confirm the inputs added before
+- 
+ <div align="center">
+<img src =src/SubmitButton.png> 
+ </div>
+ </br>
+
+- Now, The output looks like this:
+
+ <div align="center">
+<img src =src/Partial.png> 
+ </div>
+ </br>
+
+- Then, we go back to Search, to continue with our next panel for the dashboard using the query:
+
 ```spl
-source="secure.log" | rex "from (?<src>\d{1,3}(?:\.\d{1,3}){3})" | stats count by src
+sourcetype=linux_secure | stats count by src, user
 ```
+  
+ <div align="center">
+<img src =src/NewQueryforSecure.png> 
+ </div>
+ </br>
+
+- We add the finalized panel to the existing dashboard
+  
+ <div align="center">
+<img src =src/AfterSecureadd.png> 
+ </div>
+ </br>
+
+- For the new panel, if the user wants to add any dynamic Secure logs to the table, can be used with the text input
+  
+  <div align="center">
+<img src =src/AddText.png> 
+ </div>
+ </br>
+
+- Edit the Add text settings and copy the token using here to synchronize with the table search string
+  
+  <div align="center">
+<img src =src/EditAddText.png> 
+ </div>
+ </br>
+
+  <div align="center">
+<img src =src/AfterAddText.png> 
+ </div>
+ </br>
+
+- Use the token used for the Add Text settings and Provide with the search String to associate with the input settings
+  
+  <div align="center">
+<img src =src/AfterSyncDynamicLogTest.png> 
+ </div>
+ </br>
+
+- Now, lets say the user is unawre of exact field names what they are looking for, so in order to avoid this issue, we can use the drop down
+- Here, we provide the static options as the inbuilt options to choose from the drop down
+  
+<div align="center">
+<img src =src/DropDown.png> 
+ </div>
+ </br>
+
+ <div align="center">
+<img src =src/DropDownStaticOptions.png> 
+ </div>
+ </br>
+
+- Like we did before, we need to synchronize the settings using the token asscoicate with the search String
+  
+ <div align="center">
+<img src =src/DropDownSync.png> 
+ </div>
+ </br>
+
+- The final output looks like the professional realworld use case, we can build similar dashboards using this as the reference
+  
+ <div align="center">
+<img src =src/FinalOutput.png> 
+ </div>
+ </br>
+
 
 #### ✅ Final Summary
 This project highlights practical Splunk skills: log ingestion, parsing, field extraction, and dashboarding with a focus on security use cases.
