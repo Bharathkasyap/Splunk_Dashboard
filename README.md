@@ -52,9 +52,6 @@ Create a Splunk Dashboard with the following:
 ### 📁 Project Structure
 ```plaintext
 /Splunk_Dashboard/src/
-│
-├── Linux_Splunk_Installation.md
-├── Windows_Docker_Splunk_Installation.md
 ├── Dashboard_Screenshots/
 ├── access_log_dashboard.pdf
 ├── Sample_Search_Queries.md
