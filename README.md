@@ -10,47 +10,34 @@ Task Assignment – Splunk Access Logs Dashboard Project
 
 ## Role & Objective
 - Role: Cybersecurity Analyst
-
 - Objective: To document the Splunk installation process and create a professional dashboard for visualizing access log data, specifically focusing on SSH login attempts.
 
 ## Project Scope:
 You are assigned to document and complete the following:
 
 ### Splunk Installation
-
 - Document step-by-step installation of Splunk Enterprise on Linux (manual method).
-
 - Document step-by-step installation of Splunk on Windows using Docker.
 
 ### Log File Preparation
 
-- Ingest provided secure.log sample data simulating SSH login attempts (both success and failure).
+- ✅ Ingest pre-simulated log files (`secure.log` and `access.log`) into Splunk.
 
 ### Dashboard Development
 Create a Splunk Dashboard with the following:
 
 - Pie Chart for Top CategoryId's.
-
 - Bar Chart for Client IP Addresses.
-
 - Time Range Picker to filter data by time.
-
 - Dynamic Input Option (eg., src_port)
-
 - Dynamic Dropdown Filters (e.g., protocol selection).
-
 - Data Table displaying fields like src_ip, user, src_port, and protocol.
-
 - Documentation
 
-This README.md file contains:
-
+### This README.md file contains:
 - Installation guides.
-
 - Dashboard details and screenshots.
-
 - Sample SPL queries used in each panel.
-
 - Organize project folder in GitHub with clear sections for easy reviewer understanding.
 
 ### Expected Deliverables:
